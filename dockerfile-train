@@ -1,0 +1,12 @@
+FROM localhost:32000/pytorch-dev:latest
+LABEL maintainer="Brad Larson"
+
+WORKDIR /app
+COPY config config
+COPY datasets datasets
+COPY networks networks
+COPY utils utils
+COPY ./dataset/cifar-10-python.tar.gz ./dataset/cifar-10-python.tar.gz
+
+# Launch training
+ENTRYPOINT ["python3", "networks/crisp.py"]

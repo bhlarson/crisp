@@ -1,0 +1,7 @@
+dockerbuild:
+- name: pytorch-dev
+  dockerfile: dockerfile
+  context: "."
+- name: pytorch-train
+  dockerfile: dockerfile-train
+  context: "."
